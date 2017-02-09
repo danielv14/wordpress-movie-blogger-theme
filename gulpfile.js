@@ -12,6 +12,12 @@ var paths = {
       'assets/sass/*/*.scss'
     ],
     'output': './'
+  },
+  'twig': {
+    sources: [
+      'templates/*.twig',
+      'templates/*/*.twig'
+    ]
   }
 }
 
@@ -23,10 +29,16 @@ gulp.task('sass', function() {
     .pipe(livereload());
 });
 
+gulp.task('twig', function() {
+  return gulp.src(paths.twig.sources)
+    .pipe(livereload());
+});
+
 
 gulp.task('watch', function() {
   livereload.listen({ host: null });
   gulp.watch(paths.sass.all, ['sass']);
+  gulp.watch(paths.twig.sources, ['twig']);
 });
 
 gulp.task('default', ['sass', 'watch']);
