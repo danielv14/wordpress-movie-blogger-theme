@@ -1,0 +1,14 @@
+/*
+ * Theme Name: Movie Blog Theme
+ * Description: Minimal blogging theme
+ * Author: Upstatement and YOU!
+*/
+
+@import "2-utils/variables";
+
+// Import Bootstrap after variables to make overwriting of variables work
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  background-color: $color;
+}
