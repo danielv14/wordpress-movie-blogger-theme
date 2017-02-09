@@ -1,0 +1,26 @@
+{
+  "name": "wordpress-blog-theme",
+  "version": "1.0.0",
+  "description": "A theme for WordPress using Timber and Twig",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "Daniel Vernberg",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
