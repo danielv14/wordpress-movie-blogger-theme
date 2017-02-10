@@ -45,7 +45,7 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
   .homepage-hero .overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
     display: -webkit-box;
