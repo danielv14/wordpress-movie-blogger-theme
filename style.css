@@ -27,6 +27,9 @@
 /*
   Bootstrap Type variables
  */
+.other-content h4 a {
+  color: #4D545D; }
+
 .navbar {
   font-family: "Lato", sans-serif; }
 

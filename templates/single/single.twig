@@ -77,7 +77,39 @@
 
 		</div>
 
-
-
 	</section><!-- /content-wr singleapper -->
+
+	<hr>
+
+	<!-- Section with next and or previous articles -->
+	<section class="container-fluid single other-content">
+		<div class="row">
+
+			{% if post.next() and post.prev() %}
+				<div class="col-xs-6 text-center">
+					<h4><a href="{{post.prev().link}}">{{post.prev().title}}</a></h4>
+					<a href="{{post.prev().link}}">Read more</a>
+				</div>
+				<div class="col-xs-6 text-center">
+					<h4><a href="{{post.next().link}}">{{post.next().title}}</a></h4>
+					<a href="{{post.next().link}}">Read more</a>
+				</div>
+			{% elseif post.next() %}
+				<div class="text-center">
+					<h4><a href="{{post.next().link}}">{{post.next().title}}</a></h4>
+					<a href="{{post.next().link}}">Read more</a>
+				</div>
+			{% elseif post.prev() %}
+				<div class="text-center">
+					<h4><a href="{{post.prev().link}}">{{post.prev().title}}</a></h4>
+					<a href="{{post.prev().link}}">Read more</a>
+				</div>
+			{% else %}
+				<div class="text-center">
+					No related content
+				</div>
+			{% endif %}
+		</div>
+
+	</section>
 {% endblock %}
