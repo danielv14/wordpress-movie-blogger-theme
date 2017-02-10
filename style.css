@@ -30,6 +30,9 @@
 .other-content h4 a {
   color: #4D545D; }
 
+.other-content-seperator {
+  border-right: 1px solid #eeeeee; }
+
 .navbar {
   font-family: "Lato", sans-serif; }
 
