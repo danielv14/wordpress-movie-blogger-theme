@@ -1,0 +1,13 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+<section class="container archive">
+  <div class="col-md-8 col-md-offset-2">
+    <h2><i class="fa fa-tag" aria-hidden="true"></i> {{title}}</h2>
+    <p class="lead">All content tagged with {{title}}</p>
+    {% for post in posts %}
+      {% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+section.single {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+
+  .tag {
+    color: $muted-color;
+  }
+}
+
+.blog-author {
+  a {
+    color: $muted-color;
+  }
+}

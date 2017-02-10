@@ -11,10 +11,15 @@
 global $wp_query;
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
+
 if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author = new TimberUser( $wp_query->query_vars['author'] );
 	$context['author'] = $author;
-	$context['title'] = 'Author Archives: ' . $author->name();
+	$args = array(
+		'post_type' => array('news', 'review'), // array to get news AND reviews
+		'author' => $author->id()
+	);
+	$context['posts'] = Timber::get_posts($args);
+	$context['title'] = 'Written by ' . $author->name();
 }
-Timber::render( array( 'author.twig', 'archive.twig' ), $context );
+Timber::render( array( 'author.twig', 'archives/archive.twig' ), $context );

@@ -1,1 +1,60 @@
-$color: pink;
+$section-padding: 50px;
+
+
+
+/*
+  Bootstrap color variables
+ */
+$brand-primary: #F7603B;
+$brand-success: #88AB75;
+$brand-info: #2D93AD;
+$brand-danger: #DBD56E;
+$brand-warning: #F7704F;
+// own color variables
+$brand-text-color: #4D545D;
+$footer-bg-color: #333333;
+$muted-color: #777777;
+
+/*
+  Bootstrap Scaffolding variables
+ */
+$body-bg: #FBFBFB;
+$text-color: $brand-text-color;
+$link-color: $brand-primary;
+
+
+/*
+  Bootstrap font variables
+ */
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'Lato', sans-serif;
+$headings-font-family: 'Source Sans Pro', sans-serif;
+$headings-font-weight: 900;
+$font-size-base: 18px;
+$line-height-base: 1.8;
+
+
+/*
+  Bootstrap navbar variables
+ */
+$navbar-height: 60px;
+$navbar-custom-font-family: $font-family-sans-serif;
+$navbar-border-radius: 0px;
+$navbar-margin-bottom: 0px;
+$navbar-default-bg: $body-bg;
+// $navbar-default-brand-color: $brand-text-color;
+$navbar-default-brand-hover-color: $brand-primary;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-toggle-border-color: none;
+$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 2%);
+$navbar-default-toggle-icon-bar-bg: $brand-primary;
+
+/*
+  Bootstrap Jumbotron variables
+ */
+$jumbotron-padding: 0px;
+
+/*
+  Bootstrap Type variables
+ */
+$blockquote-border-color: $brand-primary;

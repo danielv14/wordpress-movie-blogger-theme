@@ -14,27 +14,58 @@
  * @since   Timber 0.2
  */
 
-$templates = array( 'archive.twig', 'index.twig' );
+$templates = array( 'archives/archive.twig', 'index.twig' );
 
 $context = Timber::get_context();
 
 $context['title'] = 'Archive';
-if ( is_day() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
-} else if ( is_month() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'M Y' );
-} else if ( is_year() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'Y' );
-} else if ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} else if ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} else if ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
-}
 
 $context['posts'] = Timber::get_posts();
+
+if ( is_day() ) {
+
+	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
+
+} else if ( is_month() ) {
+
+	$context['title'] = 'Archive: '.get_the_date( 'M Y' );
+
+} else if ( is_year() ) {
+
+	$context['title'] = 'Archive: '.get_the_date( 'Y' );
+
+} else if ( is_tag() ) {
+
+	// Setup of args
+	$args = array(
+		'post_type' => array('news', 'review'), // array to get news AND reviews
+		'tag' => get_query_var('tag') // get category from query
+	);
+
+	$context['posts'] = Timber::get_posts($args);
+
+	$context['title'] = single_tag_title( '', false );
+	array_unshift( $templates, 'archives/archive-tag.twig' );
+
+} else if ( is_category() ) {
+
+	$context['title'] = single_cat_title( '', false );
+	$context['subtitle'] = "All content in category " . single_cat_title('', false);
+	// Setup of args
+	$args = array(
+		'post_type' => array('news', 'review'), // array to get news AND reviews
+		'category' => get_query_var('cat') // get category from query
+	);
+
+	$context['posts'] = Timber::get_posts($args);
+	array_unshift( $templates, 'archives/archive.twig' );
+
+} else if ( is_post_type_archive() ) {
+
+	$context['title'] = post_type_archive_title( '', false );
+	$context['subtitle'] = "Read all the " . post_type_archive_title( '', false) . '!';
+	array_unshift( $templates, 'archives/archive-' . get_post_type() . '.twig', 'archive/archive.twig' );
+}
+
 
 Timber::render( $templates, $context );

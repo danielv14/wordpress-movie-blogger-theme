@@ -9,19 +9,14 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "partials/menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
-				</div>
+				{% include "partials/menu.twig" with {'menu': menu.get_items} %}
 			{% endblock %}
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
+			{#
+				{% if title %}<h1 class="text-center">{{title}}</h1>{% endif %}
+			#}
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
@@ -35,10 +30,11 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
-				{% include 'partials/footer.twig' %}
-			</footer>
+			{% include 'partials/footer.twig' %}
 			{{ function('wp_footer') }}
 		{% endblock %}
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,0 +1,15 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+<section class="container archive">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>{{title}}</h1>
+    {% if subtitle %}
+      <p class="lead">{{subtitle}}</p>
+    {% endif %}
+    {% for post in posts %}
+      {% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

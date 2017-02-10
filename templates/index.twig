@@ -1,7 +1,56 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+
+	<!-- jumbotron section -->
+	<section class="jumbotron homepage-hero">
+		<div class="overlay">
+			<div class="container text-center">
+				<h1>{{site.title}}</h1>
+				<p>{{site.description}}</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- news section -->
+	<section class="container news-wrapper">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h2 class="text-center">The latest news</h2>
+				{% for post in news %}
+					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+				{% endfor %}
+				<p class="text-center">
+					<a href="/news" class="btn btn-default text-center">More news</a>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<hr>
+
+	<!-- Review items -->
+	<section class="container review-image-wrapper">
+		<div class="row">
+			<h2 class="text-center">Reviews</h2>
+			<br>
+			{% for post in reviews %}
+				<div class="col-lg-6 col-md-6">
+					<a href="{{post.link}}">
+						<figure class="review-figure">
+							<img class="img-responsive" src="{{post.get_thumbnail | resize(1000, 450)}}" alt="">
+							<figcaption>
+							{{post.title}}, {{post.post_date|date}}
+						</figcaption>
+						</figure>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+
+		<p class="text-center button-wrapper">
+			<a href="/reviews" class="btn btn-default text-center">More reviews</a>
+		</p>
+
+	</section>
 {% endblock %}

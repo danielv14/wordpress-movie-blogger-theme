@@ -4,7 +4,28 @@
  * Author: Upstatement and YOU!
 */
 
+/*
+ Imported Google Fonts
+ */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,900');
+
+
 @import "2-utils/variables";
+@import "2-utils/mixins";
+
+@import "3-base/layout";
+@import "3-base/navbar";
+@import "3-base/hero";
+@import "3-base/footer";
+@import "3-base/labels";
+
+@import "4-sections/reviewImages";
+@import "4-sections/news";
+@import "4-sections/tease";
+
+@import "5-pages/single";
+@import "5-pages/archives";
 
 // Import Bootstrap after variables to make overwriting of variables work
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
