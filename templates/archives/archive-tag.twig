@@ -6,7 +6,7 @@
     <h2><i class="fa fa-tag" aria-hidden="true"></i> {{title}}</h2>
     <p class="lead">All content tagged with {{title}}</p>
     {% for post in posts %}
-      {% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+      {% include ["teases/tease-"~post.post_type~".twig", "teases/tease.twig"] %}
     {% endfor %}
   </div>
 </section>

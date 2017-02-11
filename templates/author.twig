@@ -7,7 +7,7 @@
 			<h2>{{author | capitalize}}</h2>
 			<p class="lead">All content by {{author | capitalize}}</p>
 			{% for post in posts %}
-				{% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+				{% include ["teases/tease-"~post.post_type~".twig", "teases/tease.twig"] %}
 			{% endfor %}
 		</div>
 	</div>
