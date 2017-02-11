@@ -28,8 +28,8 @@ $link-color: $brand-primary;
  */
 $font-family-sans-serif: 'Lato', sans-serif;
 $font-family-serif: 'Lato', sans-serif;
-$headings-font-family: 'Source Sans Pro', sans-serif;
-$headings-font-weight: 900;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 700;
 $font-size-base: 18px;
 $line-height-base: 1.8;
 
@@ -37,8 +37,8 @@ $line-height-base: 1.8;
 /*
   Bootstrap navbar variables
  */
-$navbar-height: 60px;
-$navbar-custom-font-family: $font-family-sans-serif;
+$navbar-height: 50px;
+$navbar-custom-font-family: $headings-font-family;
 $navbar-border-radius: 0px;
 $navbar-margin-bottom: 0px;
 $navbar-default-bg: $body-bg;
