@@ -6,10 +6,10 @@ var livereload = require('gulp-livereload');
 
 var paths = {
   'sass': {
-    'source': 'assets/sass/style.scss',
+    'source': 'static/sass/style.scss',
     'all': [
-      'assets/sass/*.scss',
-      'assets/sass/*/*.scss'
+      'static/sass/*.scss',
+      'static/sass/*/*.scss'
     ],
     'output': './'
   },
